@@ -1,0 +1,46 @@
+<head>
+	<title>front_end</title>
+	<meta charset="utf-8">
+
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="style1.css">
+
+
+</head>
+<br/><br/><br/><br/><br/><br/><br/>
+<body style="background-color:#888">
+<div class="row">
+<div class="col-xs-5"></div>
+<div class="col-xs-4">
+<%= form_for :userdetail do |f|%>
+	<p>
+		<%= f.label :firstname %><br/>
+		<%= f.text_field :firstname %>
+	</p>
+	<p>
+		<%= f.label :lastname %><br/>
+		<%= f.text_field :lastname %>
+	</p>
+	<p>
+		<%= f.label :email %><br/>
+		<%= f.text_field :email %>
+	</p>
+	<p>
+		<%= f.label :password %><br/>
+		<%= f.password_field :password %>
+	</p>
+
+	<p>
+		<%= f.submit%>
+	</p>
+<%end%>
+</div>
+<div class="col-xs-3"></div>
+</div>
+</body>
+
