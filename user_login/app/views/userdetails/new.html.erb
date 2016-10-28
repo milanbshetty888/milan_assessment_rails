@@ -14,33 +14,53 @@
 </head>
 <br/><br/><br/><br/><br/><br/><br/>
 <body style="background-color:#888">
-<div class="row">
-<div class="col-xs-5"></div>
-<div class="col-xs-4">
-<%= form_for :userdetail do |f|%>
-	<p>
-		<%= f.label :firstname %><br/>
-		<%= f.text_field :firstname %>
-	</p>
-	<p>
-		<%= f.label :lastname %><br/>
-		<%= f.text_field :lastname %>
-	</p>
-	<p>
-		<%= f.label :email %><br/>
-		<%= f.text_field :email %>
-	</p>
-	<p>
-		<%= f.label :password %><br/>
-		<%= f.password_field :password %>
-	</p>
 
-	<p>
-		<%= f.submit%>
-	</p>
-<%end%>
-</div>
-<div class="col-xs-3"></div>
-</div>
+	<div class="row">
+		<div class="col-xs-5"></div>
+		<div class="col-xs-4">
+
+			<%= form_for :userdetail, url: userdetails_index_path do |f| %>
+
+			<% if @userdetail.errors.any? %>
+			<div id="error_explanation">
+				<h2>
+					<%= pluralize(@userdetail.errors.count, "error") %> prohibited this userdetail from being saved:
+				</h2>
+				<ul>
+					<% @userdetail.errors.full_messages.each do |msg| %>
+					<li><%= msg %></li>
+					<% end %>
+				</ul>
+			</div>
+			<% end %>
+			<% end %>
+
+			<%= form_for :userdetail do |f|%>
+			<p>
+				<%= f.label :firstname %><br/>
+				<%= f.text_field :firstname %>
+			</p>
+			<p>
+				<%= f.label :lastname %><br/>
+				<%= f.text_field :lastname %>
+			</p>
+			<p>
+				<%= f.label :email %><br/>
+				<%= f.text_field :email %>
+			</p>
+			<p>
+				<%= f.label :password %><br/>
+				<%= f.password_field :password %>
+			</p>
+
+			<p>
+				<%= f.submit%>
+			</p>
+			<%end%>
+		</div>
+		<div class="col-xs-3"></div>
+	</div>
 </body>
 
+
+<%= link_to 'to list records', userdetails_index_path%>

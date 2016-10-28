@@ -15,6 +15,12 @@ Rails.application.routes.draw do
   put '/user/edit/:id' => 'userdetails#update', as: :userdetails_update
 
   delete '/user/delete/:id' => 'userdetails#destroy', as: :userdetails_destroy
+
+  get "user/profile/:id" => "userdetails#show", as: :userdetail_show
+
+  get '/project/new/:id' => 'userdetails#show', as: :profile_show
+
+  post '/project/new/:id' => 'userdetails#create1', as: :userdetails_create1
   # delete "book/:id" => "books#destroy", as: :book_destroy
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

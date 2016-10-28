@@ -1,0 +1,45 @@
+
+<%= @userdetail.firstname%><br/>
+<%= @userdetail.lastname%><br/>
+<%= @userdetail.email%>
+
+
+	<%= form_for :project do |f|%>
+	<p>
+		<%= f.label :name %><br/>
+		<%= f.text_field :name %>
+	</p>
+	<p>
+		<%= f.label :duration %><br/>
+		<%= f.text_field :duration %>
+	</p>
+	<p>
+		<%= f.label :teamsize %><br/>
+		<%= f.text_field :teamsize %>
+	</p>
+	<p>
+		<%= f.label :cost %><br/>
+		<%= f.text_field :cost %>
+	</p>
+	<p>
+		<%= f.label :domain %><br/>
+		<%= f.text_field :domain %>
+	</p>
+
+	<p>
+		<%= f.submit%>
+	</p>
+	<%end%>
+
+<!--  Name, Duration, TeamSize, Cost, Domain and who are all part of the Project.  -->
+
+
+
+<br/>
+<%= link_to 'to create new record', userdetails_create_path%>
+<br/>
+<%= link_to 'to list records', userdetails_index_path%>
+<br/>
+
+
+

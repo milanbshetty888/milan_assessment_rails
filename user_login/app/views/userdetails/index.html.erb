@@ -45,9 +45,15 @@
 		<td>
 			<%= link_to 'Destroy', userdetails_destroy_path(var.id), method: :delete%>
 		</td>
+		<td>
+			<%= link_to 'profile', userdetail_show_path(var.id)%>
+		</td>
 	</tr>
 	<%end%>
 </table>
+<br/>
+<%= link_to 'to create new record', userdetails_create_path%>
+<br/>
 </div>
 <div class="col-xs-4"></div>
 </div>
